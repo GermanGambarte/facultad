@@ -1,0 +1,45 @@
+Algoritmo restaurante
+
+/*---Subprograma---*/
+void metodoDePago(real xTSC)
+Comienzo
+	caracter TP
+	real TCC, CA
+	CA = 0.5
+	Escribir"El monto a abonar es de $", xTSC
+	Escribir "Elija el método de pago"
+	Leer TP
+	Segun(TP)
+		'E': Escribir "El monto final es de $", xTSC
+		'T': TCC = xTSC * CA
+			 Escribir "El monto sin recargo es de $", xTSC
+			 Escribir "El monto final con recargo es de $", TCC
+	FinSegun
+	retorna()
+Fin
+
+/*---Subprograma---*/
+void calcPrecio(entero xTH, entero xCH)
+Comienzo
+	real PH, TSC
+	Segun(xTH)
+		'S':PH=400
+		'D':PH=500
+		'T':PH=700
+		de otro modo: Escribir "La Hamburguesa no se encuentra en el menú"
+	FinSegun
+	TSC = xCH * PH
+	metodoDePago(TSC)
+	retorna()
+Fin
+
+/*---Algoritmo Principal---*/
+Comienzo
+	caracter TH
+	entero CH
+	Escribir "Indique la hamburguesa que desea adquirir"
+	Leer TH
+	Escribir "Indique la cantidad de hamburguesas que desea pedir"
+	Leer CH
+	calcPrecio(TH,CH)
+Fin

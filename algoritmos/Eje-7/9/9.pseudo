@@ -1,0 +1,17 @@
+registro infracciones {
+  cadena patente
+  entero zona
+  entero tipo
+}
+
+/*----Subprograma----*/
+void cargar(multas)
+Comienzo
+  
+Fin
+
+/*----Algortimo Principal-----*/
+Comienzo
+infracciones multas[N]
+cargar(multas)
+Fin

@@ -1,0 +1,58 @@
+constante N = 300
+/*----Subprograma----*/
+entero carga(entero t[N], entero e[N])
+Comienzo
+  entero i, s = 0
+  Para i desde 0 hasta N-1
+    Escribir "Ingrese la edad del corredor", i + 1
+    Leer e[i]
+    Escribir "Ingrese el tiempo de carrera"
+    Leer t[i]
+    s = s + e[i]
+  FinPara
+  retorna(s)
+Fin
+/*----Subprograma----*/
+entero promedio(entero e[N], entero p)
+Comienzo
+  entero i
+  Escribir "La edad promedio es", p
+  Para i desde 0 hasta N-1
+    Si(e[i] > p)
+      entonces Escribir "El corredor", i + 1, "supera la edad promedio"
+    FinSi
+  FinPara
+  retorna(prom)
+Fin
+
+/*----Subprograma----*/
+void subCarga(entero t[N],entero e[i],entero st[N])
+Comienzo
+  entero i 
+  Para i desde 0 hasta N-1
+    Si(e[i] > 50)
+      entonces st[i] = t[i]
+    FinSi
+  FinPara
+  retorna()
+Fin
+
+/*----Subprograma----*/
+void subMostrar(entero st[N])
+Comienzo
+  entero i
+  Para i desde 0 hasta N-1
+    Si(st[i] != 0)
+      entonces Escribir "corredor ", i, ": ",st[i]," minutos"
+    FinSi
+  FinPara
+  retorna()
+Fin
+/*----Algoritmo Principal----*/
+Comienzo
+  entero tiempo[N], edad[N], subtiempo, prom, C
+  prom = carga(tiempo, edad)
+  promedio(edad)
+  subCarga(tiempo, edad, subtiempo)
+  subMostrar(subtiempo)
+Fin

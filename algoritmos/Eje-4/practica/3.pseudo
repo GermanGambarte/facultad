@@ -1,0 +1,51 @@
+/*----Subprograma----*/
+void informar(booleano sector, real sueldo, real total)
+Comienzo
+  Escribir "El importe total de sueldos del sector 2 es de $", total
+  Si(sector)
+    entonces Escribir "El sueldo más bajo pertenece al sector 1 y es de $", sueldo
+    sino Escribir "El sueldo más bajo pertenece al sector 2 y es de $", sueldo
+Fin
+/*----Subprograma----*/
+void proceso()
+Comienzo
+  real sueldo, min,sum
+  entero sector
+  booleano esSector1
+  esSector1 = falso
+  min = 9999999
+  sum = 0
+  Escribir "Indique el sueldo del empleado. 0 para finalizar"
+  Leer sueldo
+    Mientras(sueldo > 0)
+      Escribir "Ingrese el sector del empleado"
+      Leer sector
+      Si(sector == 2)
+        entonces sum = sum + sueldo
+      FinSi
+      Si(sueldo < min)
+          entonces min = sueldo
+                    Si(sector == 1)
+                      entonces esSector1 = verdadero
+                      sino esSector1 = falso
+                    FinSi
+      FinSi
+      Escribir "Ingrese el sector del empleado"
+      Leer sector
+    FinMientras
+  informar(esSector1,min,sum)
+Fin
+/*----Algoritmo Principal----*/
+Comienzo 
+proceso()
+Fin
+
+
+/*----Datos----*/
+/*
+* Estructura: mientras y según
+* sueldo
+* sector
+* sumador
+* minimo
+*/

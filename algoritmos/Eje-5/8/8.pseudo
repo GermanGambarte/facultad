@@ -1,0 +1,45 @@
+/*----Subprograma----*/
+void carga(entero n[N])
+Comienzo
+  entero i
+  Para i desde 0 hasta N-1
+    Leer n[i]
+  FinPara
+Fin
+/*----Subprograma----*/
+real suma(entero n[N])
+Comienzo
+  entero i
+  real entrada
+  Escribir "Ingrese un número"
+  Leer entrada
+  Escribir n[2], " + ", entrada, " = ", n[2] + entrada
+Fin
+/*----Subprograma----*/
+void intercambio(entero n[N])
+Comienzo
+  entero decimo
+  decimo = n[9]
+  n[9] = n[4]
+  n[4] = decimo
+  Escribir n[N]
+Fin
+/*----Subprograma----*/
+void mostrar(entero n[N])
+Comienzo
+  real entrada
+  entero i
+  Para i desde 0 hasta N-1
+    Si(i resto 2 == 0)
+      entonces Escribir n[i]," * ", entrada, " = ",n[i] * entrada
+    FinSi
+Fin
+/*----Algoritmo Principal----*/
+Comienzo
+  constante N = 10
+  entero numeros[N]
+  carga(numeros)
+  suma(numeros)
+  intercambio(numeros)
+  mostrar(numeros)
+Fin

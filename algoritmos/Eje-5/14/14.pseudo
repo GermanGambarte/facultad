@@ -1,0 +1,75 @@
+constante entero N = 15
+
+void carga(entero o[N])
+Comienzo
+  entero i, taller
+  Para i desde 0 hasta N-1
+    Escribir "Ingrese el número del taller"
+    Leer taller
+    Escribir "Ingrese la cantidad de obleas emitidas"
+    Leer o[taller-1]
+    Escribir "el taller ", taller, "emitió ", o[taller -1], "obleas"
+  FinPara
+  retorna()
+Fin
+
+void totalObleas(entero o[N])
+Comienzo
+  entero i, sum = 0
+  Para i desde 0 hasta N-1
+    sum = sum + o[i]
+  FinPara
+  Escribir "A nivel provincial se emitieron", sum, "obleas"
+  retorna()
+Fin
+
+void obleasEmitidas(entero o[N])
+Comienzo
+  entero i, min = 9999999999, max= 0, tmin,tmax
+  Para i desde 0 hasta
+    Si(o[i] < min)
+      min = o[i]
+      tmin = i + 1
+    FinSi
+    Si(o[i] > max)
+      max = o[i]
+      tmax = i + 1
+    FinSi
+  FinPara
+  Escribir "El taller ", tmin, "Es el que menos obleas emitió"
+  Escribir "El taller ", tmax, "Es el que más obleas emitió"
+Fin
+
+void informe(entero o[N])
+Comienzo
+  entero i
+  Para i desde 0 hasta N-1
+    Si(o[i] > 500)
+      entonces Escribir "Uno de los 15 talleres emitió mas de 500 obleas"
+               retorna()
+    FinSi
+  FinPara
+  Escribir "Ningún taller emitió mas de 500 obleas"
+  retorna()
+Fin
+
+/*----Algortimo Principal----*/
+Comienzo
+  entero obleas[N]
+  carga(obleas)
+  totalObleas(obleas)
+  informe(obleas)
+Fin
+
+/*----Apartado 5----*/
+
+void carga(entero o[N])
+Comienzo
+  entero i, taller
+  Para i desde 0 hasta N-1
+    Escribir "Ingrese la cantidad de obleas emitidas"
+    Leer o[i]
+    Escribir "el taller ", i+1, "emitió ", o[i], "obleas"
+  FinPara
+  retorna()
+Fin

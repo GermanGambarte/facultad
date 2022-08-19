@@ -1,0 +1,64 @@
+constante N = 20
+/*----Subprograma 1----*/
+void carga(real n[N])
+Comienzo
+  entero i
+  Para i desde 0 hasta N-1
+    Escribir "Ingrese un número"
+    Leer n[i]
+  FinPara
+  retorna()
+Fin
+/*----Subprograma 2----*/
+entero busqueda(real n[N], real numero)
+Comienzo
+  entero i
+  Mientras((i < N) Y (n[i] != numero))
+    i = i + 1
+  FinMientras
+  retorna(i)
+Fin
+/*----Subprograma 3----*/
+entero subCarga(real n[N], real sn[N])
+Comienzo
+  entero i, j = 0
+  Para i desde 0 hasta N-1
+    Si(n[i] > 1000)
+      entonces sn[j] = n[i]
+               j = j + 1
+    FinSi
+  FinPara
+  retorna(j)
+Fin
+/*----Subprograma 4----*/
+void subMostrar(real sn[N], entero C)
+Comienzo
+  entero i
+  real min, max
+  Escribir "ingrese un valor mínimo"
+  Leer min
+  Escribir "ingrese un valor máximo"
+  Leer max
+  Para i desde 0 hasta C-1
+    Si(sn[i] > min Y sn[i] < max)
+      entonces Escribir i, ": ", sn[i]
+    FinSi
+  FinPara
+  retorna()
+Fin
+/*----Subprograma----*/
+
+/*----Algoritmo Principal----*/
+Comienzo
+  real numeros[N], subnumeros[N], numero
+  entero c, indice
+  Leer numero
+  carga(numeros)
+  indice = busqueda(numeros, numero)
+  Si(indice < N)
+    entonces Escribir "El número se encuentra en la posición: ", indice
+    sino Escribir "El número no se encuentra en el arreglo"
+  FinSi
+  c = subCarga(numeros, subnumeros)
+  subMostrar(subnumeros, c)
+Fin

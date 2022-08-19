@@ -1,0 +1,30 @@
+/*----Subprograma----*/
+real valorDeuda(entero xcuotas, real ximporte)
+Comienzo
+  retorna(xcuotas * ximporte)
+Fin
+/*----Subprograma----*/
+void importeFinal(entero cliente, entero cuotas, real importe)
+Comienzo
+  Si(coutas > 0 Y cuotas < 4)
+    entonces Escribir "La deuda del cliente,"cliente, "es de $", valorDeuda(cuotas, importe)*1.1
+  FinSi
+  Si(coutas > 3 Y cuotas < 6)
+    entonces Escribir "La deuda del cliente,"cliente, "es de $", valorDeuda(cuotas, importe)*1.15
+  FinSi
+  Si(coutas > 5)
+    entonces Escribir "La deuda del cliente,"cliente, "es de $", valorDeuda(cuotas, importe)*1.2
+  FinSi
+Fin
+/*----Algoritmo principal----*/
+Comienzo
+  entero cantCoutas
+  real cantImporte
+  Escribir "Indique la cantidad de cuotas a que adeuda"
+  Leer cantCuotas
+  Escribir "Indique el importe de la cuota"
+  Leer cantImporte
+  Para i desde 1 hasta 35
+    importeFinal(i,cantCouotas, cantImporte)
+  FinPara
+Fin

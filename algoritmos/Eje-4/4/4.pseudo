@@ -1,0 +1,34 @@
+/*----Subprograma----*/
+void competidores()
+  cadena nacionalidad
+  entero edad, min, max, M, DNI
+  real puntaje
+  booleano bandera = falso
+  min = 999
+  max = 0
+  Escribir "Ingrese la cantidad de competidores"
+  Leer M
+  Escribir "Ingrese el DNI del competidor"
+  Leer DNI
+  Escribir "Ingrese la nacionalidad del competidor"
+  Leer nacionalidad
+  Escribir "Ingrese la edad del competidor"
+  Leer edad
+  Escribir "Ingrese el puntaje del competidor"
+  Leer puntaje
+  Para(entero i = 1;i <= 4;i++)
+    Si(puntaje > max Y edad < min)
+      max = puntaje
+      min = edad
+      Si(nacionalidad == "Argentina")
+        band = verdadero
+      FinSi
+    FinSi
+  FinPara
+  Si(band)
+    Escribir "Es competidor más joven y con menor puntaje es argentino"
+  FinSi
+/*----Algoritmo Principal----*/
+Comienzo
+  competidores()
+Fin

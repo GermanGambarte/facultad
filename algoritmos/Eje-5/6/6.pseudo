@@ -1,0 +1,72 @@
+/*----Subprograma----*/
+void carga(real e[N])
+Comienzo
+  entero i
+  Para i desde 0 hasta N-1
+    Leer e[i]
+  FinPara
+  retorna()
+Fin
+
+/*----Subprograma----*/
+void promedio(real e[N])
+Comienzo
+  entero i
+  real sum = 0, cont = 0, prom
+  Para i desde 0 hasta N-1
+    sum = sum + e[i]
+  FinPara
+  prom = s/N
+  Para j desde 0 hasta N-1
+    Si(e[j] > prom)
+      entonces cont = cont + 1
+    FinSi
+  FinPara
+  Si (cont > 0)
+    entonces Escribir cont, " deportistas superan la estatura promedio"
+    sino Escribir "No hay deportistas que superen la estatura promedio"
+  FinSi
+  retorna()
+Fin
+
+/*----Subprograma----*/
+void informe(real e[N])
+Comienzo
+  entero i
+  real max = 0, min = 99
+  Para i desde 0 hasta N-1
+    Si(e[i] < min)  
+      entonces min = e[i]
+    FinSi
+    Si(e[i] > max)  
+      entonces max = e[i]
+    FinSi
+  FinPara
+  Escribir "La estatura mínima es ", min
+  Escribir "La estatura máxima es ", max
+Fin
+
+/*----Subprograma----*/
+void comparacion(real e[N])
+Comienzo
+  real estatura
+  entero i,c
+  Escribir "Indique una estatura"
+  Leer estatura
+  Para i desde 0 hasta N-1
+    Si(e[i] == estatura)
+      c = c + 1
+    FinSi
+  FinPara
+  Escribir "La cantidad de estaturas que coinciden con la ingresada son:", c
+Fin
+
+/*----Algoritmo Principal----*/
+Comienzo
+constante N = 10
+  real estaturas[N], p
+  carga(estaturas)
+  promedio(estaturas)
+  informe(estatura)
+  comparacion(estatura)
+Fin

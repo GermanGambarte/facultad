@@ -1,0 +1,6 @@
+registro minerales {
+  cadena nombre
+  cadena color
+  entero codigo
+  real densidad
+}

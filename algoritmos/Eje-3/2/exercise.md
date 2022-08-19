@@ -1,0 +1,1 @@
+Realizar un algoritmo con subprogramas que determine si alcanzan los bancos existentes en un aula, de no ser así, informar cuantos bancos es necesario agregar. Se cuenta con la cantidad de bancos del aula y la cantidad de alumnos inscriptos para ese curso.

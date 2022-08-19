@@ -1,0 +1,31 @@
+Algoritmo facturas
+
+/*----Subprogramas----*/
+void validar(entero numero, real importe, entero xmin, entero xmax)
+Comienzo
+  Si(importe >= xmin Y importe <= xmax)
+    entonces Escribir "La factura número", numero, "se encuentra entre los importes propuestos"
+  FinSi
+Fin
+/*----Subprogramas----*/
+void nuevaFactura(real xmin, real xmax)
+Comienzo
+entero nroFactura
+real impFactura
+Para(entero i = 1; i <= 30; i++ )
+    Escribir "Ingrese el número de factura"
+    Leer nroFactura
+    Escribir "Ingrese el importe de la factura"
+    Leer impFactura
+    validar(nroFactura, impFactura, xmin, xmax)
+  FinPara
+/*----Algortimo Principal----*/
+Comienzo
+  real min, max
+  Escribir "ingrese un valor de importe mínimo"
+  Leer min
+  Escribir "ingrese un valor de importe máximo"
+  Leer max
+  nuevaFactura(min, max)
+Fin
+

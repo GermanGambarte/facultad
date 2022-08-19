@@ -1,0 +1,61 @@
+/*----Subprograma----*/
+void carga(entero t[N])
+Comienzo
+  entero i
+  Para i desde 0 hasta N-1
+    Leer t[i]
+  FinPara
+  retorna()
+Fin
+/*----Subprograma----*/
+real promedio(entero t[N])
+Comienzo
+  entero i
+  real s, prom
+  s=0
+  Para i desde 0 hasta N-1
+    s=s + t[i]
+  FinPara
+  prom = s/N
+  retorna(prom)
+Fin
+/*----Subprograma----*/
+entero cantidad(entero t[N],entero xp)
+Comienzo
+  entero i, ct
+  ct = 0
+  Para i desde 0 hasta N-1
+    Si(t[i]>=xp)
+      entonces ct = ct + 1
+    FinSi
+  FinPara
+  Escribir "La cantidad de dias que no fueron inferiores al promedio mensual son:", ct
+  retorna()
+Fin
+/*----Subprograma----*/
+void muestra(entero xtemp[N])
+Comienzo
+  entero i, temp1, temp2
+  Para i desde 0 hasta N-1
+    Leer temp1
+    Leer temp2
+    Si(temp2 > temp1) Y (Temp2 <=42)
+      entonces
+        Si((xtemp[i] > temp1) Y (xtemp[i] < temp2))
+          entonces Escribir "El dia", i+1, "varió su temperatura entre", temp1, "C y", temp2, "C"
+          sino Escribir "Temperatura superior a 42C"
+        FinSi
+    FinSi
+  FinPara
+  retorna()
+Fin
+/*----Algoritmo Principal----*/
+Comienzo
+  constante N=31
+  entero temp[N], p
+  carga(temp)
+  p = promedio(temp)
+  Escribir "El promedio mensual de temperaturas de enero de 2019 es", p
+  cantidad(temp,p)
+  muestra(temp)
+Fin

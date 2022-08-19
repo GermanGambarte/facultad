@@ -1,0 +1,99 @@
+Algoritmo comidasparallevar
+
+Constante N = 15 
+
+registro clientes
+{
+cadena nombre_apellido 
+entero dni 
+entero edad 
+cadena dom 
+real imp
+}
+
+void carga_datos (clientes c[N]) 
+  Comienzo
+  entero i
+    Para i desde 0 hasta N-1
+      Escribir "Ingrese nombre y apellido del cliente nro ", i+1
+      Leer c[i].nombre_apellido
+      Escribir "Ingrese DNI del cliente nro ", i+1
+      Leer c[i].dni
+      Escribir "Ingrese edad del cliente nro ", i+1
+      Leer c[i].edad
+      Escribir "Ingrese domicilio del cliente nro ", i+1
+      Leer c[i].dom
+      Escribir "Ingrese importe pagado del cliente nro ", i+1
+      Leer c[i].imp
+    FinPara
+  retorna ()
+Fin
+
+real max_imp (clientes c[N]) 
+  Comienzo
+  entero i
+  real xmax = -1
+  Para i desde 0 hasta N-1
+    Si (c[i].imp > xmax) 
+    entonces xmax = c[i].imp
+    FinSi
+  FinPara
+  retorna (xmax)
+Fin
+
+real min_imp (clientes c[N]) 
+Comienzo
+  entero i
+  real xmin = 9999999999999
+  Para i desde 0 hasta N-1
+    Si (c[i].imp < xmin) 
+    entonces xmin = c[i].imp
+    FinSi
+  FinPara
+  retorna (xmin) 
+Fin
+
+void muestra(clientes c[N], int i)
+Comienzo
+  Escribir "Cliente nro: ", i+1
+  Escribir "Nombre y apellido: ", c[i].nombre_apellido
+  Escribir "DNI: ", c[i].dni
+  Escribir "Edad: ", c[i].edad
+  Escribir "Domicilio: ", c[i].dom
+  Escribir "Importe pagado: ", c[i].imp
+  retorna()
+Fin
+
+void datosMinMax (clientes c[N], real valor)
+Comienzo
+  entero i
+  Para i desde 0 hasta N-1
+    Si (c[i].imp == valor) 
+    entonces muestra(c, i)
+    FinSi
+  FinPara
+  retorna()
+Fin
+
+void promedio(clientes c[N]) 
+Comienzo
+  entero i, sum = 0, prom
+  Para i desde 0 hasta N-1
+    sum = sum + c[i].edad
+  FinPara
+  prom = sum / N
+  Escribir "La edad promedio de los clientes es de ", prom, " años"
+  retorna()
+Fin
+
+/*----Algoritmo Principal—-*/
+Comienzo
+clientes cli[N]
+real max, min
+carga_datos(cli)
+max = max_imp(cli)
+datosMinMax(cli, max)
+min = min_imp(cli)
+datosMinMax(cli, min)
+promedio(cli)
+Fin  

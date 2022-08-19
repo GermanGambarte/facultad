@@ -1,0 +1,82 @@
+constante N = 500
+/*----Subprograma----*/
+void carga(real g[N], real imp[N])
+Comienzo
+  entero i, cliente
+  Para i desde 0 hasta N-1
+    Escribir "Ingrese el numero del cliente"
+    Leer cliente
+    Escribir "Ingrese el consumo de gas"
+    Leer g[cliente - 201]
+    Escribir "Ingrese el importe a abonar"
+    Leer imp[cliente - 201]
+  FinPara
+  retorna()
+Fin
+/*----Subprograma----*/
+void secuencial(real imp[N])
+Comienzo
+  entero i
+  booleano existe = falso
+  Mientras(i < N Y existe == falso)
+    Si(imp[i] > 5000)
+      entonces existe = verdadero
+      sino i = i + 1
+    FinSi
+  FinMientras
+  Si(existe)
+    entonces Escribir "Al menos un cliente debe abonar mas de $5000"
+    sino Escribir "Ningún cliente debe abonar mas de $5000"
+  retorna()
+Fin
+/*----Subprograma----*/
+void binaria(real g[N], real imp[N])
+Comienzo
+  entero i
+  real consumo
+  Escribir "ingrese el consumo a buscar"
+  Leer consumo
+  Para i desde 0 hasta N-1
+    Si(g[N] == consumo)
+      entonces Escribir "El importe que corresponde al consumo de gas es: ", imp[i]
+                retorna()
+    FinSi
+  FinPara
+  Escribir "No se encontró un importe para el consumo de gas ingresado"
+  retorna()
+Fin
+/*----Subprograma----*/
+entero subCarga(real imp[N], entero sc[N])
+Comienzo
+  entero i, j = 0, sum = 0, prom, C
+  Para i desde 0 hasta N-1
+    sum = sum + imp[i]
+  FinPara
+  prom = sum / N
+  Para i desde 0 hasta N-1
+    Si(imp[i] > prom)
+      entonces sc[j] = i + 201
+               j = j + 1
+    FinSi
+  FinPara
+  retorna(j)
+Fin
+/*----Subprograma----*/
+void subMostrar(entero sc[N], entero c)
+Comienzo
+  entero i
+  Para i desde 0 hasta c-1
+    Escribir i,": ", sc[i]
+  FinPara
+Fin
+
+/*----Algoritmo Principal----*/
+Comienzo
+  real gas[N], importe[N]
+  entero subcliente[N], C
+  carga(gas, importe)
+  secuencial(importe)
+  binaria(importe, gas)
+  C = subcarga(importe,subcliente)
+  subMostrar(subcliente, C)
+Fin

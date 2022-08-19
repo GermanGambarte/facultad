@@ -1,0 +1,38 @@
+Algoritmo distribuidora
+
+/*----Subprograma----*/
+real vencimiento()
+	entero diaV,mesV,añoV,diaP,mesP,añoP
+	booleano estavencida
+	real importe
+	Comienzo
+	Escribir "Fecha de pago de la factura en formato: dd/mm/aaaa"
+	Leer diaP,mesP,añoP
+	Escribir "Fecha de vencimiento de la factura en formato: dd/mm/aaaa"
+	Leer diaV,mesV,añoV
+	Si(añoV <= añoP)
+		entonces 
+		sino Si(mesV <= mesP)
+				 entonces
+					sino Si(diaV <= diaP)
+
+	Fin
+/*----Subprograma----*/
+void mostrarInfo(entero sucursal, real importe)
+	real valorRecDesc
+	Comienzo
+	Escribir "La sucursal numero: ", sucursal
+	Si(sucursal == 2 O sucursal == 5)
+		entonces varlorRecDesc = vencimiento(importe)
+	Si(sucursal == 1 O sucursal == 3 O sucursal == 4)
+	Fin
+/*----Algoritmo Principal----*/
+Comienzo
+	entero sucursal
+	real importe
+	Escribir "Indique el número de la sucursal. 1:Zona Centro; 2: Zona Sur; 3: Zona Este; 4: Zona Oeste; 5: Zona Norte"
+	Leer sucursal
+	Escribir "Indique el importe abonado"
+	Leer importe
+	mostrarInfo(sucursal,importe)
+Fin

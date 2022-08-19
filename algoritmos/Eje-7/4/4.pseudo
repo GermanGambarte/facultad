@@ -1,0 +1,100 @@
+Algoritmo comidasparallevar
+
+Constante N = 15 registro
+
+clientes
+{
+cadena
+nombre_apellido entero
+dni entero edad cadena
+dom real imp
+}
+
+void carga_datos (clientes c[N]) 
+  Comienzo
+  entero i
+    Para i desde 0 hasta N-1
+      Escribir “Ingrese nombre y apellido del cliente nro “, i+1
+      Leer c[i].nombre_apellido
+      Escribir “Ingrese DNI del cliente nro “, i+1
+      Leer c[i].dni
+      Escribir “Ingrese edad del cliente nro “, i+1
+      Leer c[i].edad
+      Escribir “Ingrese domicilio del cliente nro “, i+1
+      Leer c[i].dom
+      Escribir “Ingrese importe pagado del cliente nro “, i+1
+      Leer c[i].imp
+    FinPara
+  retorna ()
+Fin
+
+real max_imp (clientes c[N]) 
+  Comienzo
+  entero i
+  real xmax
+  xmax = -1
+  Para i desde 0 hasta N-1
+    Si (c[i].imp > xmax) entonces
+    xmax = c[i].imp
+    FinSi
+  FinPara
+  retorna (xmax)
+Fin
+
+void muestra_max (clientes c[N], real xmax) 
+Comienzo
+  entero i
+  Escribir “Datos de los 15 clientes que mas pagaron”
+  Para i desde 0 hasta N-1
+    Si (c[i].imp == xmax) 
+    entonces 
+    Escribir “Cliente nro: “, i+1
+    Escribir “Nombre y apellido: “, c[i].nombre_apellido
+    Escribir “DNI: “, c[i].dni
+    Escribir “Edad: “, c[i].edad
+    Escribir “Domicilio: “, c[i].dom
+    Escribir “Importe pagado: “, c[i].imp
+    FinSi
+  FinPara
+  retorna ()
+Fin
+
+void muestra_min (clientes c[N], real xmin) 
+Comienzo
+  entero i
+  Escribir “Datos de los 15 clientes que menos pagaron”
+  Para i desde 0 hasta N-1
+    Si (c[i].imp == xmin) entonces Escribir
+    “Cliente nro: “, i+1
+    Escribir “Nombre y apellido: “, c[i].nombre_apellido
+    Escribir “DNI: “, c[i].dni
+    Escribir “Edad: “, c[i].edad
+    Escribir “Domicilio: “, c[i].dom
+    Escribir “Importe pagado: “, c[i].imp
+    FinSi
+  FinPara
+  retorna ()
+Fin
+
+void promedio (clientes c[N]) Comienzo
+entero i, sum, prom
+sum = 0
+Para i desde 0 hasta N-1
+sum = sum + c[i].edad
+FinPara
+prom = (sum div N)
+Escribir “La edad promedio de los clientes es de “, prom, “ años”
+retorna()
+Fin
+
+/*----Algoritmo Principal—-*/
+Comienzo
+clientes cli[N] 
+real max, min
+carga_datos (cli)
+max = max_imp (cli)
+muestra_max (cli, max)
+min = min_imp (cli)
+muestra_min (cli, min)
+promedio (cli)
+Fin

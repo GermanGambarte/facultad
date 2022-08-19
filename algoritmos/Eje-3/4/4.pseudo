@@ -1,0 +1,24 @@
+Algoritmo comparación
+
+/*---Subprograma---*/
+void resultado (entero xn1, entero xn2)
+Comienzo
+	Si(xn1 < xn2)
+		entonces Escribir "El menor es el primer número y su valor es:", xn1
+		sino Si(xn2 < xn1)
+			 entonces Escribir "El menor es el segundo número y su valor es", xn2
+			 sino Escribir "Los números son iguales"
+			FinSi
+	Finsi
+	retorna()
+Fin
+
+/*---Algoritmo Principal---*/
+Comienzo
+	real n1,n2
+	Escribir "Ingrese primer número"
+	Leer n1
+	Escribir "Ingrese segundo número"
+	Leer n2
+	resultado(n1,n2)
+Fin

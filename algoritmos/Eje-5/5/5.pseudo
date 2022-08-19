@@ -1,0 +1,57 @@
+/*----Subprograma----*/
+void carga(entero e[N])
+Comienzo
+  entero i
+  Para i desde 0 hasta N-1
+    Leer e[i]
+  FinPara
+Fin
+/*----Subprograma----*/
+real promedio(entero e[N])
+Comienzo
+  entero i, s = 0
+  Para i desde 0 hasta N-1
+    s = s + e[i]
+  FinPara
+  retorna(s/N)
+Fin
+/*----Subprograma----*/
+void informe(entero e[N], real edadProm)
+Comienzo
+  entero i, c = 0
+  booleano b = falso
+  Para i desde 0 hasta N-1
+    Si(e[i] <= edadProm)
+      entonces c = c + 1
+    FinSi
+    Si(e[i] == edadProm)
+      entonces b = verdadero
+    FinSi
+  FinPara
+  Escribir "la cantidad de edades que no superan el promedio son:", c
+  Si (b)
+    entonces Escribir "Hay como mínimo una edad que con coincide con la edad promedio"
+    sino Escribir "Ninguna edad coincide con la edad promedio"
+Fin
+
+/*----Subprograma----*/
+void informe(entero e[N], real prom)
+Comienzo
+  Para i Desde 0 Hasta N-1
+    Si(e[i] == prom)
+      entonces Escribe "Al menos una de las edades coincide con la edad promedio"
+                retorna()
+    FinSi
+  FinPara
+  retorna()
+Fin
+
+/*----Algoritmo principal----*/
+Comienzo
+  constante N = 200
+  entero edades[N]
+  real p
+  carga(edades)
+  p = promedio(edades)
+  informe(edades, p)
+Fin

@@ -1,0 +1,27 @@
+Algoritmo Farmacia
+/*----Subprograma----*/
+void nuevaFactura(real numero, real xmin, real xmax)
+real impFactura
+Comienzo
+  Escribir "Ingrese el importe de la factura"
+  Leer impFactura
+  Si(impFactura > xmin Y impFactura < xmax)
+    entonces Escribir "La factura número: ", numero, "tiene un importe entre $",xmin, "y $",xmax
+Fin
+/*----Algorimo Principal----*/
+Comienzo
+  entero nroFactura
+  real min, max
+  Escribir "Ingrese un importe mínimo"
+  Leer min
+  Escribir "Ingrese un importe máximo"
+  Leer max
+  Escribir "Ingrese el número de la factura. Para finalizar ingrese 0"
+  Leer nroFactura
+  Mientras(nroFactura > 0)
+    nuevaFactura(nroFactura, min,max)
+    Escribir "Ingrese el número de la factura. Para finalizar ingrese 0"
+    Leer nroFactura
+  FinMientras
+  Escribir "Finalizó el programa"
+Fin

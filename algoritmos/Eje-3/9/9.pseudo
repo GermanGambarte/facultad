@@ -1,0 +1,40 @@
+Algoritmo Recarga Virtual
+
+/*---Subprograma---*/
+real calcIncremento(real valor)
+Comienzo
+  real importe
+  importe = 0
+  Si(valor >= 500)
+    entonces importe = valor * .2  
+  FinSi
+
+  Si(valor >= 700)
+    entonces importe = valor * .5 
+  FinSi
+
+  Si(valor >= 900)
+    entonces importe = valor * 1 
+  FinSi
+
+  retorna(importe)
+Fin
+/*---Subprograma---*/
+void recargar(cadena xnro, real xrecarga)
+Comienzo
+  real incremento
+  incremento = calcIncremento(xrecarga)
+  Escribir "Se realizó una recarga de $",xrecarga,"al número ", xnro
+  Escribir "El total a pagar es $", xrecarga + incremento
+Fin
+  
+/*---Algoritmo Principal---*/
+Comienzo
+	cadena nro
+	real recarga
+	Escribir "Ingrese el número de celular que desea recargar"
+	Leer nro
+	Escribir "Ingrese el monto de la recarga"
+	Leer recarga
+	recargar(nro,recarga)
+Fin

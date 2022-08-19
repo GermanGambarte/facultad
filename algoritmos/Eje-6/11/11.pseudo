@@ -1,0 +1,38 @@
+constante N = 164
+/*----Subprograma----*/
+void carga(entero s[N])
+Comienzo
+  entero i, sup
+  Para i desde 0 hasta N-1
+    Escribir "Ingrese la superficie del lote"
+    Leer sup
+    Si(sup > 650)
+      entonces s[i] = sup
+      sino s[i] = 0
+    FinSi 
+  FinPara
+  retorna()
+Fin
+/*----Subprograma----*/
+booleano verificar(entero s[N])
+Comienzo
+  entero i, superficie
+  Leer superficie
+  booleano existe = falso
+  Mientras(i < N Y existe == falso)
+    Si (s[i] == valor)
+      entonces existe = verdadero
+      sino i = i + 1
+    FinSi
+  FinPara
+  retorna(existe)
+Fin
+/*----Algoritmo Principal----*/
+Comienzo
+  entero superficies[N], c
+  c = carga(superficies)
+  Si(verificar(superficies, c))
+    entonces Escribir "Al menos un lote tiene 650 metros cuadrados"
+    sino Escribir "Ningún lote tiene 650 metros cuadrados"
+  FinSi
+Fin

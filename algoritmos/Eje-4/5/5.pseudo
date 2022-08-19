@@ -1,0 +1,32 @@
+/*----Subprograma----*/
+void promedio(entero cantidad, real total)
+Comienzo
+  Escribir "el importe promedio de gas pagado por los contribuyentes de Rawson es: ", cantidad / total
+Fin
+
+/*----Subprograma----*/
+void contribuyentes()
+cadena departamento, servicio
+real importe, total
+entero cantidad
+cantidad = 0
+total = 0
+Escribir "Ingrese el importe a cobrar. (0 para finalizar)"
+Leer importe
+Mientras(importe > 0)
+  Escribir "Ingrese el servicio a abonar"
+  Leer servicio
+  Escribir "Ingrese departamento del contribuyente"
+  Leer departamento
+  Si(departamento == "Rawson" Y servicio == "gas")
+    cantidad = cantidad + 1
+    total = total + importe
+  FinSi
+  Escribir "Ingrese el importe a cobrar. (0 para finalizar)"
+  Leer importe
+FinMientras
+promedio(cantidad,total)
+/*----Algoritmo Principal----*/
+Comienzo
+  contribuyentes()
+Fin

@@ -1,0 +1,47 @@
+Algoritmo Vivero
+
+/*---Subprograma---*/
+void noValido(cadena xflor)
+Comienzo
+  Segun(xflor)
+    "rosa": Escribir "La flor ",xflor, "se debe cultivar en los meses 1, 2 o 3"
+    "camelia": Escribir "La flor ",xflor, "se debe cultivar en el mes 4"
+    "clavel": Escribir "La flor ",xflor, "se debe cultivar en el mes 5"
+    "lirio": Escribir "La flor ",xflor, "se debe cultivar en los meses 6 o 7"
+    "azucena": Escribir "La flor ",xflor, "se debe cultivar en el mes 8"
+    "dalia": Escribir "La flor ",xflor, "se debe cultivar en los meses 9, 10, 11 o 12"
+  FinSegun
+  retorna()
+Fin
+
+/*---Subprograma---*/
+void verificacion(cadena xflor, entero xmes)
+booleano valido
+Comienzo
+  Segun(xmes)
+    1 ... 3: valido = "rosa" == xflor
+    4: valido = "camelia" == xflor
+    5: valido = "clavel" == xflor
+    6 ... 7: valido = "lirio" == xflor
+    8: valido = "azucena" == xflor
+    9 ... 12: valido = "dalia" == xflor
+  FinSegun
+  
+  Si(valido)
+    entonces Escribir "La flor ", xflor, "se puede cultivar en el mes ", xmes
+    sino  Escribir "La flor ", xflor, "no se puede cultivar en el mes" , xmes
+          noValido(xflor)
+  FinSi
+  retorna()
+Fin
+
+/*---Algoritmo Principal---*/
+Comienzo
+  cadena flor
+  entero mes
+  Escribir "Indique la flor que desea cultivar"
+  Leer flor
+  Escribir "Indique el mes en el que desea cultivarla"
+  Leer mes
+  verificacion(flor, mes)
+Fin

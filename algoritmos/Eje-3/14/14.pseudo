@@ -1,0 +1,35 @@
+Algoritmo Apuestas
+
+/*----Subprograma----*/
+void nuevaApuesta(real xmin, real xmax)
+real impApuesta
+entero nroApuesta, contador
+Comienzo
+  contador = 0
+  Escribir "Ingrese el número de la apuesta"
+  Leer nroApuesta
+  Escribir "Ingrese el importe de la apuesta"
+  Leer impApuesta
+  Si(impApuesta > xmin Y impApuesta < xmax)
+    entonces contador = contador + 1
+  FinSi
+  Si(impApuesta > 1000)
+    entonces Escribir "La apuesta número: ", nroApuesta, "es mayor a $1000"
+  FinSi
+  Escribir"La cantidad de apuestas que se encuntran entre $", xmin," y $", xmax, "es", contador
+Fin
+
+/*----Algortimo Principal----*/
+Comienzo
+  entero N, contador
+  real min, max
+  contador = 0
+  Escribir "Ingrese la cantidad de apuestas realizadas"
+  Leer N
+  Escribir "Ingrese importe mínimo de apuesta"
+  Leer min
+  Escribir "Ingrese importe máximo de apuesta"
+  Para(entero i = 1; i <= N;i++)
+    nuevaApuesta(min,max)
+  FinPara
+Fin

@@ -1,0 +1,74 @@
+constante N = 6
+registro alumnos {
+  entero varones
+  entero mujeres
+  entero edadVarones
+  entero edadMujeres
+}
+
+/*----SubPrograma----*/
+void carga(alumnos c[N])
+Comienzo
+  entero i, edad
+  caracter sexo
+  Para i desde 0 hasta N-1
+    Leer edad
+    Mientras(edad != 0)
+      Leer sexo
+      Segun(sexo)
+      'M': c[i].mujeres = c[i].mujeres + 1
+           c[i].edadMujeres = c[i].edadMujeres + edad
+      'F': c[i].varones = c[i].varones + 1
+           c[i].edadVarones = c[i].edadVarones + edad
+      FinSegun
+      Leer edad
+    FinMientras
+Fin
+
+/*----SubPrograma----*/
+void promedio(alumnos c[N])
+Comienzo
+  entero i
+  real promV = 0, promM = 0
+  Para i desde 0 hasta N-1
+    Escribir "La edad promedio de varones en el curso", i+1, "es de:" c[i].edadVarones / c[i].varones, "años"
+    Escribir "La edad promedio de mujeres en el curso", i+1, "es de:" c[i].edadMujeres / c[i].mujeres, "años"
+  FinPara
+Fin
+
+/*----SubPrograma----*/
+void curso(alumnos c[N])
+Comienzo
+  entero i, alumnos, edad
+  Para i desde 0 hasta N-1
+    Si(c[i].mujeres == c[i].varones)
+      alumnos = c[i].mujeres + c[i].varones
+      edad = c[i].edadMujeres + c[i].edadVarones
+    FinSi
+    Escribir "En el curso", i+1, "la edad promedio es:", edad / alumnos
+  FinPara
+Fin
+
+/*----SubPrograma----*/
+void informe(alumnos c[N])
+Comienzo
+  entero i, cont = 0
+  real promV,promM
+  Para i desde 0 hasta N-1
+  promV = c[i].edadVarones / c[i].varones
+  promM = c[i].edadMujeres / c[i].mujeres
+    Si(promV == promM)
+      cont = cont + 1
+    FinSi
+  FinPara
+  Escribir "En ", cont, "cursos, las edades promedio de ambos sexos son iguales"
+Fin
+
+/*----Algoritmo Principal----*/
+Comienzo
+alumnos cursos[N]
+  carga(cursos)
+  promedio(cursos)
+  curso(cursos)
+  informe(cursos)
+Fin

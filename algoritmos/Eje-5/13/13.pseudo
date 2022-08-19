@@ -1,0 +1,53 @@
+/*----Subprograma----*/
+void carga(real r[N])
+Comienzo
+  entero i
+  Para i desde 0 hasta N-1
+    Leer r[i]
+  FinPara
+Fin
+/*----Subprograma----*/
+void maxMin(real r[N])
+Comienzo
+  entero i
+  real max = 0, min = 999999999
+  Para i desde 0 hasta N-1
+    Si(r[i] < min)
+      entonces min = r[i]
+    FinSi
+    Si(r[i] > max)
+      entonces max = r[i]
+    FinSi
+  FinPara
+Fin
+/*----Subprograma----*/
+void porcentaje(real r[N])
+Comienzo
+  real s = 0
+  entero i
+  Para i desde 0 hasta N-1
+    s = s + r[i]
+  FinPara
+  Escribir "la sucursal 19 recaudo un", r[18] * 100 / s,"% respecto del total recaudado"
+Fin
+/*----Algoritmo Principal----*/
+Comienzo
+  constante N = 36
+  real recaudacion[N]
+  carga(recaudacion)
+  maxMin(recaudacion)
+  porcentaje(recaudacion)
+Fin
+
+/*
+5. Realizar las modificaciones necesarias para responder a todos los ítems anteriormente planteados, suponiendo que, de cada sucursal se registra la siguiente información: número de sucursal e importe total recaudado, es decir la información viene desordenada.
+*/
+/*----Subprograma----*/
+void carga(real r[N])
+Comienzo
+  entero i, sucursal
+  Leer sucursal
+  Para i desde 0 hasta N-1
+    Leer r[sucursal - 1]
+  FinPara
+Fin

@@ -1,0 +1,79 @@
+constante N=20
+
+void carga(entero n[N])
+Comienzo
+  entero i
+  Para i desde 0 hasta N-1
+    Escribir "Ingrese un número"
+    Leer n[i]
+  FinPara
+Fin
+
+booleano busqueda(entero n[N],entero num)
+Comienzo
+  entero i = 0
+  booleano existe = faslo
+  Mientras(i<N Y existe == falso)
+    Si(n[i] == num)
+      entonces existe = verdadero
+      sino i = i + 1
+    FinSi
+  FinMientras
+  retorna(existe)
+Fin
+
+booleano ES_DIVISOR(entero num1, entero num2)
+Comienzo
+  Si(num2 mod num1 == 0)
+    entonces retorna(verdadero)
+    sino retorna(falso)
+  FinSi
+Fin
+
+entero CUENTA_DIVISORES(entero num)
+Comienzo
+  entero i, cont = 0
+  Para i desde 0 hasta N-1
+    Si(ES_DIVISOR(i,num))
+      entonces cont = cont + 1
+    FinSi
+  FinPara
+  retorna(cont)
+Fin
+
+entero subCarga(entero n[N], entero sn[N])
+Comienzo
+  entero i, j = 0, cont
+  Para i desde 0 hasta N-1
+    cont = CUENTA_DIVISORES(n[i])
+    Si(cont > 4)
+      entonces sn[j] = n[i]
+               j = j + 1
+    FinSi
+  FinPara
+  retorna(j)
+Fin
+
+void subMostrar(entero sn[N], entero C)
+Comienzo
+  entero i
+  Para i desde 0 hasta C-1
+    Escribir i,": ", sn[i]
+  FinPara
+Fin
+
+/*----Algoritmo Principal----*/
+Comienzo
+  entero numeros[N], subnumeros[N], numero,c
+  booleano existe
+  carga(numeros)
+  Escribir "Ingrese el número que desea buscar" 
+  Leer numero
+  existe = busqueda(numeros, numero)
+  Si(existe)
+    entonces Escribir "El número", numero, "Se encuentra en el arreglo"
+    sino Escribir "El número ", numero, "no se encuentra en el arreglo"
+  FinSi
+  c=subCarga(numeros,subnumeros)
+  subMostrar(subnumeros, c)
+Fin

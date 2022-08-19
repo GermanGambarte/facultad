@@ -1,0 +1,79 @@
+
+/*----Subprograma----*/
+void datosProvinciales(entero encuestados, entero mujeres, entero fumadoras, entero maxEdad, entero maxDep, booleano esFumador)
+  Comienzo
+    Escribir "En la provincia se encuestaron ",encuestados, "persona"
+    Escribir "Porcentaje de mujeres fumadoras respecto al total de mujeres encuestadas es de : " fumadoras*100/mujeres
+
+    Si(esFumador)
+      entonces Escribir "La persona de mayor edad tiene ",maxEdad ," años y pertenece al departamento Nro: ", maxDep ,". Es fumador."
+      sino Escribir "La persona de mayor edad tiene ",maxEdad ," años y pertenece al departamento Nro: ", maxDep, ". No es fumador."
+    FinSi
+  Fin
+
+/*----Subprograma----*/
+void encuesta()
+  caracter fumador
+  entero i, edad, sexo, fumador, cantEncuestados, sumEdad, cantFumadoras, mujerDep, totalEncuestados, totalMujeres, totalFumadoras, maxEdad, maxDep
+  booleano esFumador
+  Comienzo
+    cantEncuestados = 0
+    sumEdad = 0
+    cantFumadoras = 0
+    mujerDep = 0
+    totalEncuestados = 0
+    totalMujeres = 0
+    totalFumadoras = 0
+    maxEdad = 0
+    maxDep = 0
+    esFumador = false
+    Para i desde 1 hasta 19
+      Escribir"Ingrese la edad. (0 para finalizar)"
+      Leer edad
+      Mientras(edad>0)
+        Escribir "Indique el sexo: 'F': Femenino o 'M': Masculino"
+        Leer sexo
+        Escribir "Indique si es fumador/ra: 'S': Si o 'N': NO"
+        Leer fumador
+
+        cantEncuestados = cantEncuestados + 1
+
+        Si(fumador == "S") 
+          entonces sumEdad = sumEdad + edad
+        FinSi
+        Si(sexo == "F")
+          entonces mujerDep = mujerDep + 1
+        FinSi
+        Si(fumador == "S" Y sexo == "F") 
+          entonces cantFumadoras =cantFumadoras + 1
+        FinSi
+        Si(edad>maxEdad) 
+          entonces maxEdad=edad
+                  maxDep=i
+          Si(fumador=="S")
+            entonces esFumador = verdadero
+            sino esFumador = falso
+          FinSi
+        FinSi
+
+        Escribir"Ingrese la edad. (0 para finalizar)"
+        Leer edad
+      FinMientras
+
+      Escribir "Del departamento Nro: ",i ," fuman ", cantFumadoras, " mujeres. "
+      Escribir sumEdad/cantEncuestados, " años, es la edad promedio del departamento Nro: ", i 
+
+      totalEncuestados = totalEncuestados + encuestados
+      totalMujeres = totalMujeres + mujerDep
+      totalFumadoras = totalFumadoras + cantFumadoras 
+      cantEncuestados = 0
+      sumEdad = 0
+      cantFumadoras = 0
+      mujerDep = 0
+    FinPara
+    datosProvinciales(totalEncuestados, totalMujeres, totalFumadoras, maxEdad, maxDep, esFumador)
+  Fin
+/*----Algoritmo Principal----*/
+Comienzo
+  encuesta()
+Fin

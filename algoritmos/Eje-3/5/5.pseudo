@@ -1,0 +1,24 @@
+/*---Subprograma---*/
+real promedio(entero xn1, entero xn2, entero xn3)
+Comienzo
+	retorna((xn1+xn2+xn3)/3)
+Fin
+
+/*---Algoritmo Principal---*/
+Comienzo
+	entero n1,n2,n3
+	Escribir "ingrese nota del parcial 1"
+	Leer n1
+	Escribir "ingrese nota del parcial 2"
+	Leer n2
+	Escribir "ingrese nota del parcial 3"
+	Leer n3
+	p = promedio(n1,n2,n3)
+	Si(p<4)
+		entonces Escribir "recursar"
+		sino si(p<7)
+				entonces Escribir "regularizar"
+				Sino Escribir "promocionar"
+			 FinSi
+	FinSi
+Fin

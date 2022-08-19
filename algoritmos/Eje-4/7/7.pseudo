@@ -1,0 +1,19 @@
+/*----Subprograma----*/
+void pedidos()
+  carcacter medicamento
+  cadena CUIL
+  entero max, min, cantidad
+  min=999999
+  max=0
+  Escribir "ingrese la cantidad de medicamentos"
+  Leer cantidad
+  Mientras(cantidad > 0)
+    Escribir "ingrese el tipo de medicamentos"
+    Leer medicamento
+    Escribir "ingrese el CUIL de la farmacia"
+    Leer CUIL
+    if(medicamento == "inyectables" Y )
+/*----Algoritmo Principal----*/
+Comienzo
+  pedidos()
+Fin

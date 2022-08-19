@@ -1,0 +1,30 @@
+/*----SubPrograma----*/
+booleano busca_binaria(int a[8], int elem)
+Comienzo
+   entero inf, sup, medio
+   inf= 0
+   sup = 7
+   medio = (inf + sup) / 2
+   Mientras(inf <= sup Y elem != a[medio])
+      Si(elem < a[medio])
+         entonces sup = medio -1
+         sino inf = medio + 1
+      FinSi
+   FinMientras
+   Si(inf < sup)
+      entonces retorna(VERDADERO)
+      sino retorna(FALSO)
+   FinSi
+Fin
+/*----Algoritmo Principal----*/
+Comienzo
+   entero arre[8], elem
+   booleano b
+   carga(arre)
+   Leer elem
+   b = busca_binaria(arre, elem)
+   Si(b != VERDADERO)
+      entonces Escribir "el elemento no se encontró"
+      sino Escribir "El elemento,", elem, "se encontró"
+   FinSi
+Fin

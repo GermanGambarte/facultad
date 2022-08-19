@@ -1,0 +1,59 @@
+/*----Subprograma----*/
+void carga(real t[N])
+Comienzo
+  entero dia, i
+  Leer dia
+  Para i desde 0 hasta N-1
+    Leer t[dia-1]
+  FinPara
+Fin
+
+/*----Subprograma----*/
+void impar(real t[N])
+Comienzo
+  Para i desde 0 hasta N-1
+    Si(i % 2 == 0)
+      entonces Escribir "la temperatura del día", i+1, "fue de", t[i], "C"
+    FinSi
+  FinPara
+Fin
+
+/*----Subprograma----*/
+void mostrar(real t[N])
+Comienzo
+  real min = 99, max = -99
+  entero diaMin, diaMax
+  Para i desde 0 hasta N-1
+    Si(t[i] < min)
+      entonces min = t[i]
+               diaMin = i+1
+    FinSi
+    Si(t[i] > max)
+      entonces max = t[i]
+               diaMax = i+1
+    FinSi
+  FinPara
+  Escribir "El dia con menor temperatura fue el", diaMin
+  Escribir "El día con mayor temperatura fue el", diaMax
+Fin
+
+/*----Subprograma----*/
+void intercambio(real t[N])
+Comienzo
+  entero dia1, dia2, valorDia
+  Leer dia1
+  Leer dia2
+  valorDia = t[dia2]
+  t[dia2] = t[dia1]
+  t[dia1] = t[valorDia]
+Fin
+
+/*----Algoritmo Principal----*/
+Comienzo
+  constante N = 30
+  real temperatura[N]
+  carga(temperatura)
+  impar(temperatura)
+  mostrar(temperatura)
+  intercambio(temperatura)
+Fin

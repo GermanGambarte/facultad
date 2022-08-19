@@ -1,0 +1,49 @@
+constante N = 600
+constante C = 19
+registro empresa
+{
+  entero empresas
+  entero empleados
+}
+
+/*----Subprograma----*/
+void inicializa(empresa l[C])
+Comienzo
+  entero i
+  Para i desde 0 hasta C-1
+    l[i].empresas = 0
+    l[i].empleados = 0
+  FinPara
+  retorna()
+Fin
+/*----Subprograma----*/
+void carga(empresa l[C])
+Comienzo
+  entero i, localidad, cantEmp
+  Para i desde 0 hasta N-1
+    Leer loc
+    Leer cantEmp
+    l[loc - 1].empresas = l[loc - 1].empresas + 1
+    l[loc - 1].empleados = l[loc - 1].empleados + cantEmp
+  FinPara
+  retorna()
+Fin
+
+/*----Subprograma----*/
+void mostrar(empresa l[C])
+Comienzo
+  entero i
+  Para i desde 0 hasta C-1
+    Escribir "La localidad", i + 1, "tiene", l[i].empresas, "empresas"
+    Escribir "Y tiene un promedio de", l[i].empleados / l[i].empresas, "empleados"
+  FinPara
+  retorna()
+Fin
+
+/*----Algoritmo Principal----*/
+Comienzo
+  empresa localidad[C]
+  inicializa(localidad)
+  carga(localidad)
+  mostrar(localidad)
+Fin

@@ -1,0 +1,77 @@
+constante N=110
+registro aspirantes {
+  entero num
+  cadena nombre
+  cadena apellido
+  entero grupoFamiliar
+  entero cuotas
+  real importe
+}
+
+/*----Subprograma----*/
+void cargar(aspirantes l[N])
+Comienzo
+  entero i
+  Para i desde 0 hasta N-1
+    Leer l.num[0]
+    Leer l.nombre[0]
+    Leer l.apellido[0]
+    Leer l.grupoFamiliar[0]
+    Leer l.cuotas[0]
+    Leer l.importe[0]
+  FinPara
+Fin
+
+/*----Subprograma----*/
+void emitir(aspirantes l[N])
+Comienzo
+  real total
+  Para i desde 0 hasta N-1
+  total = l.cuotas[i] * l.importe[i]
+    Si(total > 77500)
+      entonces Escribir "apirante: ",l.nombre[i], l.apellido[i]
+               Escribir "cantidad de cuotas: ",l.cuotas[i]
+               Escribir "importe abonado hasta la fecha: ",total
+  FinPara
+Fin
+
+/*----Subprograma----*/
+void calculo(aspirantes l[N])
+Comienzo
+  entero i
+  real sum
+  Para i desde 0 hasta N-1
+    sum = sum + l.cuotas[i] * l.importe[i]
+  FinPara
+  Escribir "El total recaudado por la empresa es de $", sum
+Fin
+
+/*----Subprograma----*/
+void ordenar(aspirantes l[N])
+Comienzo
+  entero k,i,aux, cota
+  cota=N-1
+  k=1
+  Mientras(k != -1)
+    k= -1
+    Para i desde 0 hasta cota-1
+      Si(l.nya[i] > l.nya[i+1])
+        entonces aux = l.nya[i]
+                l.nya[i] = l.nya[i+1]
+                l.nya[i] = aux
+                k=i
+      FinSi
+    FinPara
+    cota = k
+  FinMientras
+Fin
+
+/*----Algoritmo Principal----*/
+Comienzo
+  aspirantes listado[N]
+  cargar(listado)
+  emitir(listado)
+  calculo(listado)
+  ordenar(listado)
+  buscar(listado)
+Fin
