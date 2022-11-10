@@ -1,4 +1,4 @@
-# UNIDAD 1: MATRICES - SISTEMA DE ECUACIONES LINEALES
+# UNIDAD 1: Matrices - Sistemas de ecuaciones lineales
 
 1. Definir matriz y orden de una matriz
 
@@ -70,7 +70,8 @@
 ---
 2. ¿Cuáles son los elementos que caracterizan a un vector?
 
-   - **Módulo**: Es el número dado por la longitud del segmento $AB$ y se indica $||\vec{AB}||$: $$||\vec{AB}|| = long(AB)$$
+   - **Módulo**: Es el número dado por la longitud del segmento $AB$ y se indica $||\vec{AB}||$: 
+   $$||\vec{AB}|| = long(AB)$$
    - **Dirección**: Es la dirección de la recta que contiene a los puntos $A$ y $B$.
    - **Sentido**: Está determinado por el origen y el extremo del vector. Decimos que el vector $\vec{AB}$ tiene el sentido "de $A$ hacia $B$".
 
@@ -100,14 +101,29 @@
 6. Responder **V** o **F**. Justificar.
 
    - $y=2$ es la ecuación de una recta en el plano paralela al eje $X$.
+
      - **Verdadero**. Si $y=2$ el eje x tiene por ecuación $y=0$.
+
    - Si $\vec{v}=(v_1,0)$ es un vector director de la recta _r_ entonces _r_ es paralela al eje $Y$.
+
      - **Verdadero**
-   - si la recta _r_ en el plano pasa por los puntos $P(0,b)$ y $Q(a,0)$ entonces la ecuación de la recta es: $$\frac{x}{a} + \frac{y}{b} = 1$$
+
+   - si la recta _r_ en el plano pasa por los puntos $P(0,b)$ y $Q(a,0)$ entonces la ecuación de la recta es: 
+
+   $$\frac{x}{a} + \frac{y}{b} = 1$$
+
      - **Verdadero**
-   - Si la recta _r_ en el plano pasa por el origen entonces su ecuación es: $$y=mx$$
+
+   - Si la recta _r_ en el plano pasa por el origen entonces su ecuación es: 
+
+   $$y=mx$$
+
      - **Verdadero**
-   - Si $\vec{N}=(A,B,C)$ es un vector ortogonal a una recta en el espacio entonces su ecuación es: $$(x,y,z)=(x_o,y_o,z_o) + (A,B,C)$$
+
+   - Si $\vec{N}=(A,B,C)$ es un vector ortogonal a una recta en el espacio entonces su ecuación es: 
+
+   $$(x,y,z)=(x_o,y_o,z_o) + (A,B,C)$$
+
      - **Verdadero**
 
 # UNIDAD 3: Espacios vectoriales de dimensión Finita
@@ -234,7 +250,8 @@
 ---
 4. Explicar dos métodos para hallar la imagen de una T.L.
 
-    **Método por definición**: $$ImT=\{\bar{v} \in V / \exist \bar{u} \in U : T(\bar{u})=\bar{v}\}$$
+    **Método por definición**: 
+    $$ImT=\{\bar{v} \in V \diagup \exists \bar{u} \in U : T(\bar{u})=\bar{v}\}$$
     - Tomamos un vector arbitrario del codominio, este vector va pertenecer a $ImT$ si es un transformado de algún vector del dominio.
     - Aplicamos la transformación a un vector del dominio y lo igualamos al vector arbitrario del codominio, con la resolución de la ecuación armamos un SEL.
     - Aplicamos Rouché-Frobenius y se debe verificar que $Rg(A) = Rg(A°)$ por lo que si esto se verifica $ImT= E.V$ si no se verifica, tendremos a nuestra disposición las condiciones necesarios para que ambos rangos sean iguales. 
