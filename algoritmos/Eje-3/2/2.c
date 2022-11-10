@@ -1,4 +1,5 @@
-#include<stdio.h>
+#include <stdio.h>
+
 void bancosFaltantes(int bancos, int alumnos)
 {
   int faltantes = alumnos - bancos;

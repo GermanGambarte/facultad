@@ -1,0 +1,91 @@
+entero binaria(arreglo,elemento)
+Comienzo
+  entero inf,sup,med
+  inf = 0
+  sup = N-1
+  med = (inf + sup) / 2
+  Mientras(inf <= sup Y elemento != arreglo[med])
+    Si(elemento < arreglo[med])
+      entonces sup = medio - 1
+      sino inf = medio + 1
+    FinSi
+  med = (inf + sup) / 2
+  FinMientras
+  Si(inf <= sup)
+    entonces retorna(medio)
+    sino retorna(-1)
+  FinSi
+Fin
+/*----Algoritmo Principal*/
+Comienzo
+  entero arreglo[N], elemento, p
+  Leer elemento
+  p = binario(arreglo, elemento)
+  Si(p != -1)
+    entonces Escribir "Se encontro en el indice", p
+    sino Escribir "No se encontro"
+Fin
+/*-------------------------------------------*/
+
+booleano bandera(arreglo,elemento)
+Comienzo
+  booleano existe = falso
+  entero i = 0
+  Mientras(i < N Y existe == falso)
+    Si(arreglo[i] == elemento)
+      entonces existe = verdadero
+      sino i = i + 1
+    FinSi
+  FinMientras
+  retorna(existe)
+Fin
+/*----Algoritmo Principal*/
+Comienzo
+  entero arreglo[N], elemento
+  booleano p
+  Leer elemento
+  p = binario(arreglo, elemento)
+  Si(p)
+    entonces Escribir "Se encontro el elemento"
+    sino Escribir "No se encontro el elemento"
+Fin
+/*-------------------------------------------*/
+
+entero sinBandera(arreglo, elemento)
+Comienzo
+  entero i = 0
+  Mientras(i < N Y arreglo[i] != elemento)
+    i = i + 1
+  FinMientras
+  retorna(i)
+Fin
+/*----Algoritmo Principal*/
+Comienzo
+  entero arreglo[N], elemento, p
+  Leer elemento
+  p = binario(arreglo, elemento)
+  Si(p < N)
+    entonces Escribir "Se encontro el elemento en el indice", p
+    sino Escribir "No se encontro el elemento"
+Fin
+/*-------------------------------------------*/
+
+entero centinela(arreglo, elemento)
+Comienzo
+  entero i = 0
+  arreglo[N] = elemento
+  Mientras(arreglo[i] != elemento)
+    i = i + 2
+  FinMientras
+  retorna(i)
+Fin
+/*----Algoritmo Principal*/
+Comienzo
+  entero arreglo[N], elemento, p
+  Leer elemento
+  p = binario(arreglo, elemento)
+  Si(p != N)
+    entonces Escribir "Se encontro en el indice", p
+    sino Escribir "No se encontro"
+Fin
+/*-------------------------------------------*/
