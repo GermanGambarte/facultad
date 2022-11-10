@@ -21,7 +21,7 @@
 ---
 4. Definir operaciones elementales entre filas de una matriz.
 
-   Dada una matriz $A$, llamaremos _"operacion elemental entre filas de $A$"_ a cualquiera de las siguientes operaciones:
+   Dada una matriz $A$, llamaremos _"operacion elemental entre filas de A"_ a cualquiera de las siguientes operaciones:
 
      - Intercambio de dos filas cualesquiera de $A$.
      - Multiplicación de una fila de $A$, por un escalar no nulo.
@@ -57,7 +57,7 @@
     Dos sistemas lineales de _m_ ecuaciones con _n_ incógnitas se llaman "**simultáneos**" $sii$ tienen la misma matriz de coeficientes y sólo difieren en los términos independientes.
    
     **Calculo de una matriz inversa mediante sistemas simultáneos**
-     - Primero se verifica que el determiante de la matriz dada sea diferente de 0 ($|A| \neq 0$).
+     - Primero se verifica que el determiante de la matriz dada sea diferente de 0 ( $|A| \neq 0$ ).
      - Luego encontrar $A^{-1}$ significa resolver 3 sistemas de ecuaciones, cuya matriz de los coeficientes es la matriz dada y los términos independientes son las columnas de la matriz $I_3$.
      - La solución de cada sistema será una columna de la matriz inversa buscada.
 
@@ -222,7 +222,7 @@
 
 1. Definir transformación lineal.
 
-    Sea $U$ y $V$ dos $E.V$, una transformación lineal ($T.L$) entre $U$ y $V$ es una función $T:U \rightarrow V$ que verifica las siguientes condiciones:
+    Sea $U$ y $V$ dos $E.V$, una transformación lineal ( $T.L$ ) entre $U$ y $V$ es una función $T:U \rightarrow V$ que verifica las siguientes condiciones:
 
     - La imagen de la suma de dos vectores cualesquiera de $U$, es igual a la suma de las imágenes de dichos vectores en $V$.
 
